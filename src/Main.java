@@ -15,6 +15,7 @@ public class Main {
             System.out.println(" la opcion ingresada es incorrecta, por favor ingrese 1 para iniciar el proceso de registro o ingrese 0 para salir");
             opcion = teclado.nextInt();
         }
+
         // EJECUCION DE PROGRAMA
         do {
             registros.solicitarDestino();

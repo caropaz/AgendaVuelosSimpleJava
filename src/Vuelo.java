@@ -36,6 +36,7 @@ public class Vuelo {
             turno-=1;
             System.out.println("Lo siento, la cantidad ingresada es mayor a la cantidad de asientos disponible, solo tenemos la cantidad de: " + vuelos[destino][turno] );
         }
+
     }
 
     private Turno obtenerTurno(int turno){

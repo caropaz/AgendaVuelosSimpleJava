@@ -39,6 +39,7 @@ public class Registro {
         System.out.println("Turno nro 3: Noche");
 
     }
+
     public void ingresarTurno(int turno){
                     this.turno = turno;
     }
