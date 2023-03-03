@@ -8,11 +8,13 @@ public class Main {
         Registro registros = new Registro();
         Scanner teclado = new Scanner(System.in);
 
-
         // SALUDO INICIAL
         System.out.println("Bienvenido/a al Registro de Vuelos, por favor ingrese 1 para registrar o ingrese 0 para salir");
         opcion= teclado.nextInt();
-
+        while (opcion!=ingresar && opcion != salir){
+            System.out.println(" la opcion ingresada es incorrecta, por favor ingrese 1 para iniciar el proceso de registro o ingrese 0 para salir");
+            opcion = teclado.nextInt();
+        }
         // EJECUCION DE PROGRAMA
         do {
             registros.solicitarDestino();
@@ -54,7 +56,10 @@ public class Main {
             //CONSULTA SI CONTINUA O SALE
             System.out.println("Por favor, ingrese 1 para continuar registrando o ingrese 0 para salir.");
             opcion= teclado.nextInt();
-
+            while (opcion!=ingresar && opcion != salir){
+                System.out.println(" la opcion ingresada es incorrecta, por favor ingrese 1 para iniciar el proceso de registro o ingrese 0 para salir");
+                opcion = teclado.nextInt();
+            }
             // SALUDO DE DESPEDIDA
             if (opcion== salir){
                 System.out.println("¡Hasta pronto!");

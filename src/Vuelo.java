@@ -27,11 +27,13 @@ public class Vuelo {
     public void solicitarAsientos(int destino, int turno, int cantidad) {
         if (verificarAsientosDisponibles(destino, turno, cantidad)) {
             ocuparAsiento(destino, turno, cantidad);
-            obtenerDestino(turno);
-            obtenerTurno(destino);
+            obtenerDestino(destino);
+            obtenerTurno(turno);
             System.out.println("Proceso EXITOSO de: La cantidad de asientos: " + cantidad + " hacia el destino " + this.destino.name() + " del turno " + this.turno.name()
             );
         } else {
+            destino-=1;
+            turno-=1;
             System.out.println("Lo siento, la cantidad ingresada es mayor a la cantidad de asientos disponible, solo tenemos la cantidad de: " + vuelos[destino][turno] );
         }
     }
@@ -50,6 +52,7 @@ public class Vuelo {
         return this.turno;
     }
     private Destino obtenerDestino(int destino){
+
         switch (destino){
             case 1:
                 this.destino = Destino.Iguazu;
@@ -73,12 +76,22 @@ public class Vuelo {
         return this.destino;
     }
     private void ocuparAsiento(int destino, int turno, int cantidad){
+        destino -= 1;
+        turno -=1;
         vuelos[destino][turno] -= cantidad;
     }
 
     private boolean verificarAsientosDisponibles(int destino, int turno, int cantidad){
+        destino -= 1;
+        turno -=1;
         return vuelos[destino][turno]>cantidad;
     }
+
+
+        public int[][] getVuelos(){
+        return this.vuelos;
+
+        }
 
 
 }
